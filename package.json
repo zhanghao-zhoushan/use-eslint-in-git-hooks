@@ -8,5 +8,9 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^5.10.0"
-  }
+  },
+  "pre-commit": [
+    "fix",
+    "lint"
+  ]
 }

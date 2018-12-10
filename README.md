@@ -20,9 +20,10 @@ pre-commit 能够帮助我们进行 commit 之前的代码风格检查，如果�
 
 ```bash
 // use npm
-npm install pre-commit --save-dev
+$ npm install pre-commit --save-dev
+
 // use yarn
-yarn add pre-commit --dev
+$ yarn add pre-commit --dev
 ```
 
 ### package.json 文件
@@ -51,7 +52,11 @@ ESLint 可以帮助我们统一团队代码规范，形成统一的代码风格�
 全局安装
 
 ```bash
-$ npm install -g eslint
+// use npm
+$ npm install eslint --save-dev
+
+// use yarn
+$ yarn add pre-commit --dev
 ```
 
 eslint 初始化。
@@ -79,11 +84,23 @@ $ eslint yourfile.js
 
 ## husky && lint-staged
 
-我们可以通过 husky && lint-staged 来检测代码风格
+我们也可以通过 husky && lint-staged 来进行 commit 之前的代码风格检测。
 
 [husky](https://github.com/typicode/husky)
 
 [lint-staged](https://github.com/okonet/lint-staged)
+
+### 安装
+
+```bash
+// use npm
+$ npm install lint-staged husky --save-dev
+
+// use yarn
+$ yarn add lint-staged husky --dev
+```
+
+关于 husky 实现代码风格检查的代码请看 husky 分支。
 
 ## 参考
 

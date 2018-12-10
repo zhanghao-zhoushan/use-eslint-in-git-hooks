@@ -14,13 +14,15 @@ Git 初始化的时候会在 .git/hooks 文件中生成默认的 hook 文件，�
 
 ## pre-commit
 
-pre-commit 用来做提交前的代码风格检查，如果不符合，不允许提交。
+pre-commit 可以用来做提交前的代码风格检查。
 
 ### 安装
 
 ```bash
 npm install pre-commit --save-dev
 ```
+
+### 使用
 
 ## ESLint
 
@@ -40,7 +42,7 @@ $ eslint --init
 
 使用 eslint 检验文件
 
-```js
+```bash
 $ eslint yourfile.js
 ```
 

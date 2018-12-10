@@ -4,6 +4,12 @@ const copy = [...arr]
 
 const foo = () => {}
 
-  
+var bar
 
-      const = a
+const a = 'hello'
+
+copy
+
+foo
+
+bar

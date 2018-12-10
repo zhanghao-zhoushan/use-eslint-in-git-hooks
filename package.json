@@ -6,8 +6,13 @@
   "repository": "git@github.com:zhanghao-zhoushan/use-eslint-in-git-hooks.git",
   "author": "hao.zhang <735296233@qq.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint ./"
+  },
   "devDependencies": {
-    "eslint": "^5.10.0"
+    "eslint": "^5.10.0",
+    "eslint-plugin-react": "^7.11.1",
+    "pre-commit": "^1.2.2"
   },
   "pre-commit": [
     "fix",

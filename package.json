@@ -7,7 +7,7 @@
   "author": "hao.zhang <735296233@qq.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint ./"
+    "lint": "eslint src --ext .js --cache"
   },
   "devDependencies": {
     "eslint": "^5.10.0",
@@ -15,7 +15,6 @@
     "pre-commit": "^1.2.2"
   },
   "pre-commit": [
-    "fix",
     "lint"
   ]
 }

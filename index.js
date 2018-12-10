@@ -13,3 +13,5 @@ copy
 foo
 
 bar
+
+a

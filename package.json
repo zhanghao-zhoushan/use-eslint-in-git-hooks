@@ -1,0 +1,12 @@
+{
+  "name": "use-eslint-in-git-hooks",
+  "version": "1.0.0",
+  "description": "使用 ESLint 来管理你的 git commit 代码规范",
+  "main": "index.js",
+  "repository": "git@github.com:zhanghao-zhoushan/use-eslint-in-git-hooks.git",
+  "author": "hao.zhang <735296233@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.10.0"
+  }
+}

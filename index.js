@@ -13,5 +13,3 @@ copy
 foo
 
 bar
-
-a

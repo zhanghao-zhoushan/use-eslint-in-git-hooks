@@ -7,14 +7,24 @@
   "author": "hao.zhang <735296233@qq.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint src --ext .js --cache"
+    "lint": "eslint ./ --ext .js --cache --fix"
   },
   "devDependencies": {
     "eslint": "^5.10.0",
     "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
     "pre-commit": "^1.2.2"
   },
-  "pre-commit": [
-    "lint"
-  ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src": [
+      "eslint ./ --ext .js --cache --fix",
+      "git add"
+    ]
+  }
 }

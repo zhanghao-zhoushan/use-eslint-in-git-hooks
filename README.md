@@ -131,6 +131,25 @@ $ npm install lint-staged --save-dev
 $ yarn add lint-staged --dev
 ```
 
+### package.json
+
+编辑 package.json
+
+```json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/*.{js,jsx}": ["eslint --cache --fix", "git add"]
+  }
+}
+```
+
+当我们执行 git add 命令后，会将代码修改添加到缓存区，当我们执行 git commit 的时候，lint-staged 只会检查修改文件的代码风格规范。
+
 ## 参考
 
 [Run npm scripts in a git pre-commit Hook](https://elijahmanor.com/npm-precommit-scripts/)

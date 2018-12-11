@@ -11,5 +11,3 @@ const a = 'hello'
 copy
 
 foo
-
-bar

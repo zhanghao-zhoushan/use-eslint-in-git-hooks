@@ -22,8 +22,8 @@
     }
   },
   "lint-staged": {
-    "src": [
-      "eslint ./ --ext .js --cache --fix",
+    "src/**/*.js": [
+      "eslint --cache --fix",
       "git add"
     ]
   }

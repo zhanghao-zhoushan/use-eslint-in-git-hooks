@@ -84,23 +84,73 @@ $ eslint yourfile.js
 
 ## husky && lint-staged
 
-我们也可以通过 husky && lint-staged 来进行 commit 之前的代码风格检测。
+我们也可以通过 husky 来进行 commit 之前的代码风格检测。
+
+husky 可以帮助我们阻止 commit、push 不符合代码风格规范的代码。
 
 [husky](https://github.com/typicode/husky)
 
-[lint-staged](https://github.com/okonet/lint-staged)
-
-### 安装
+### 安装 husky
 
 ```bash
 // use npm
-$ npm install lint-staged husky --save-dev
+$ npm install husky --save-dev
 
 // use yarn
-$ yarn add lint-staged husky --dev
+$ yarn add husky --dev
 ```
 
-关于 husky 实现代码风格检查的代码请看 husky 分支。
+### package.json
+
+编辑 package.json
+
+```json
+{
+  "scripts": {
+    "lint": "eslint ./ --ext .js --cache --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  }
+}
+```
+
+你可以在 hooks 中写入 Git 钩子，仅仅是检查代码风格的话，添加 pre-commit 即可。当代码提交之前，会去执行 yarn lint，如果不符合约定的代码风格就不允许提交，并且会提示响应的错误信息，提示你去修改代码。
+
+### 安装 lint-staged
+
+[lint-staged](https://github.com/okonet/lint-staged)
+
+```bash
+// use npm
+$ npm install lint-staged --save-dev
+
+// use yarn
+$ yarn add lint-staged --dev
+```
+
+### package.json
+
+编辑 package.json
+
+```json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/*.{js,jsx}": ["eslint --cache --fix", "git add"]
+  }
+}
+```
+
+当我们执行 git add 命令后，会将代码修改添加到缓存区，当我们执行 git commit 的时候，lint-staged 只会检查修改文件的代码风格规范。
+
+具体实现可以看 [husky 分支](https://github.com/zhanghao-zhoushan/use-eslint-in-git-hooks/tree/husky)
 
 ## 参考
 

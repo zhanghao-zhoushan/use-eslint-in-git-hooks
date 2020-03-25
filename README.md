@@ -56,7 +56,7 @@ ESLint 可以帮助我们统一团队代码规范，形成统一的代码风格�
 $ npm install eslint --save-dev
 
 // use yarn
-$ yarn add pre-commit --dev
+$ yarn add eslint --dev
 ```
 
 eslint 初始化。
